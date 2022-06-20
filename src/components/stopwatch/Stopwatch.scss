@@ -1,0 +1,44 @@
+.stopwatch-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    box-sizing: border-box;
+    p{
+        font-weight: bold;
+        color: green;
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+    }
+    button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 5px;
+    }
+    #start{
+        background-color: transparent;
+        color: green;   
+        border: none;
+        font-size: 25px;
+        &:hover{
+            cursor: pointer;
+            color: red;
+            transition: 0.6s;
+        }
+    }
+    #reset{
+        color: red;
+        font-size: 25px;
+        &:hover{
+            cursor: pointer;
+            color: blue;
+            transition: 0.6s;
+        }
+    }
+    .hide{
+        background-color: black;
+        display: none;
+    }
+}

@@ -1,0 +1,96 @@
+.error-window {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  bottom: 20px;
+  right: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.error-window .container-error-window {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.error-window .container-error-window .side-bar {
+  width: 7px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+.error-window .container-error-window .message {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+#er {
+  border: 2px solid red;
+  border-radius: 10px;
+}
+
+#er .side-bar {
+  background-color: red;
+}
+
+#er .message {
+  color: red;
+}
+
+#su {
+  border: 2px solid green;
+  border-radius: 10px;
+}
+
+#su .side-bar {
+  background-color: green;
+}
+
+#su .message {
+  color: green;
+}
+
+#hi {
+  border: 2px solid orange;
+  border-radius: 10px;
+}
+
+#hi .side-bar {
+  background-color: orange;
+}
+
+#hi .message {
+  color: orange;
+}
+
+#lo {
+  border: 2px solid skyblue;
+  border-radius: 10px;
+}
+
+#lo .side-bar {
+  background-color: skyblue;
+}
+
+#lo .message {
+  color: skyblue;
+}
+/*# sourceMappingURL=ErrorWindow.css.map */

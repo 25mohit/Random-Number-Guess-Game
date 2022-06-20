@@ -1,0 +1,82 @@
+.start-message-modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: -10%;
+  right: -20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+}
+
+.start-message-modal .container-start {
+  background-color: rgba(250, 250, 250, 0.1);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  border-radius: 10px;
+  padding: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 320px;
+  pointer-events: all;
+}
+
+.start-message-modal .container-start .message {
+  color: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 15px;
+  letter-spacing: 1.5px;
+}
+
+.start-message-modal .container-start .start-btns {
+  text-align: right;
+}
+
+.start-message-modal .container-start .start-btns button {
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+.start-message-modal .container-start .start-btns button:hover {
+  cursor: pointer;
+}
+
+.start-message-modal .container-start .start-btns .start {
+  background-color: green;
+  color: white;
+}
+
+.start-message-modal .container-start .start-btns .start:hover {
+  background-color: white;
+  color: green;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.start-message-modal .container-start .start-btns .cancel {
+  background-color: red;
+  color: white;
+}
+
+.start-message-modal .container-start .start-btns .cancel:hover {
+  background-color: white;
+  color: red;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+/*# sourceMappingURL=StartMessage.css.map */

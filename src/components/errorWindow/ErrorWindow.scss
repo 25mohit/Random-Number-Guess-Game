@@ -1,0 +1,67 @@
+.error-window{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    bottom: 20px;
+    right: 20px;
+    align-items: center;
+        .container-error-window{
+                background-color: white;
+                padding: 10px;
+                border-radius: 10px;
+                width: fit-content;
+                display: flex;
+                .side-bar{
+                    width: 7px;
+                    margin-right: 10px;
+                    border-radius: 10px;
+                }
+                .message{
+                    user-select: none;
+                    word-spacing: 2px;
+                    letter-spacing: 1px;
+                    font-weight: bold;
+                    margin-right: 5px;
+                }
+        }
+}
+#er{
+    border: 2px solid red;
+    border-radius: 10px;
+    .side-bar{
+        background-color: red;
+    }
+    .message{
+        color: red;
+    }
+}
+#su{
+    border: 2px solid green;
+    border-radius: 10px;
+    .side-bar{
+        background-color: green;
+    }
+    .message{
+        color: green;
+    }
+}
+#hi{
+    border: 2px solid orange;
+    border-radius: 10px;
+    .side-bar{
+        background-color: orange;
+    }
+    .message{
+        color: orange;
+    }
+}
+#lo{
+    border: 2px solid skyblue;
+    border-radius: 10px;
+    .side-bar{
+        background-color: skyblue;
+    }
+    .message{
+        color: skyblue;
+    }
+}

@@ -1,0 +1,24 @@
+.ReminingChance{
+        .container-ReminingChance{
+            color: white;
+            background-color: green;
+            font-weight: bold;
+            padding: 10px;
+            .number-chance{
+                display: flex;
+                align-items: center;
+                .chance-number{
+                    font-size: 5em;
+                    // transform: rotate(360deg);
+                            margin: 0;
+                            padding: 0;
+                    }
+                    }
+                    .remaining-div{
+                        .remaining-text{
+                            font-size: 20px;
+
+                        }
+                }
+        }
+}

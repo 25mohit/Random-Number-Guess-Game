@@ -1,0 +1,46 @@
+.sorry-div {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  pointer-events: none;
+  left: 0;
+}
+
+.sorry-div .sorry-container {
+  pointer-events: all;
+  width: 80%;
+}
+
+.sorry-div .sorry-container .heading-sorry {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sorry-div .sorry-container .heading-sorry img {
+  width: 170px;
+}
+
+.sorry-div .sorry-container .heading-sorry .sorry-text {
+  font-family: 'Tangerine', cursive;
+  font-size: 8em;
+  font-weight: bold;
+  color: white;
+}
+/*# sourceMappingURL=SorryCompo.css.map */

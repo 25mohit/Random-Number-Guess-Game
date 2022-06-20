@@ -1,0 +1,116 @@
+.info-modal {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.info-modal .info-container {
+  width: 90%;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  height: 90%;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20px 40px;
+}
+
+.info-modal .info-container .info-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+}
+
+.info-modal .info-container .info-header .close-bt {
+  font-size: 45px;
+  color: white;
+  cursor: pointer;
+}
+
+.info-modal .info-container .info-header .close-bt:hover {
+  color: green;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.info-modal .info-container .content-div {
+  color: green;
+}
+
+.info-modal .info-container .content-div .dev-name {
+  margin-bottom: 10px;
+}
+
+.info-modal .info-container .content-div .dev-info {
+  letter-spacing: 1px;
+  word-spacing: 3px;
+  font-size: 18px;
+  line-height: 32px;
+}
+
+.info-modal .info-container .content-div .how-to-play {
+  margin: 10px 0;
+}
+
+.info-modal .info-container .content-div .how-to-text {
+  margin-left: 40px;
+}
+
+.info-modal .info-container .content-div .how-to-text li {
+  line-height: 32px;
+  font-size: 17px;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+}
+
+.info-modal .info-container .content-div .footer-sec {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px 0;
+  gap: 15px;
+}
+
+.info-modal .info-container .content-div .footer-sec a {
+  text-decoration: none;
+  color: green;
+}
+
+.info-modal .info-container .content-div .footer-sec a .social-icon {
+  font-size: 30px;
+}
+
+.info-modal .info-container .content-div .footer-sec a .social-icon:hover {
+  color: white;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  cursor: pointer;
+}
+
+.info-modal .info-container .content-div .footer-sec .social-icon:nth-child(4) {
+  font-size: 34px;
+}
+/*# sourceMappingURL=InfoModal.css.map */

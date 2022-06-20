@@ -1,0 +1,29 @@
+.sorry-div{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    pointer-events: none;
+    left: 0;
+    .sorry-container{
+        pointer-events: all;
+        width: 80%;
+        .heading-sorry{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img{
+                width: 170px;
+            }
+            .sorry-text{
+                font-family: 'Tangerine', cursive;
+                font-size: 8em;
+                font-weight: bold;
+                color: white;
+            }
+        }
+    }
+}

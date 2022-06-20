@@ -1,0 +1,33 @@
+.main-div{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    .choice{
+        padding: 10px;
+        box-sizing: border-box;
+        width: 25%;
+    }
+    .add{
+        padding: 10px;
+        margin-bottom: 50px;
+        width: 25%;
+    }
+        .guess{
+            padding: 15px;
+            width: 50%;
+            box-sizing: border-box;
+            // margin: 20px 0;
+        }
+        .guesses-p{
+            display: flex;
+            align-items: center;
+            p{
+                color: red;
+                margin:0 5px;
+                font-weight: bold;
+
+            }
+        }
+}

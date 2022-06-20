@@ -1,0 +1,118 @@
+.guess-number::-webkit-outer-spin-button,
+.guess-number::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.center-section-div{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .part-bg{
+        z-index: 500;
+    }
+        .center-container{
+            height: fit-content;
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
+            .player-name{
+                position: fixed;
+                width: 100%;
+                // background-color: red;
+                pointer-events: none;
+                left: 0;
+                text-align: center;
+                top: 10px;
+                .name{
+                    display: flex;
+                    // background-color: orange;
+                    justify-content: center;
+                    align-items: center;
+                    pointer-events: none;
+                    color: green;
+                    font-weight: bold;
+                    font-size: 20px;
+                    #user-icon{
+                        font-size: 40px;
+                        margin: 0 10px;
+                    }
+
+                }
+            }
+            .g-number-div{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+                .guess-number{
+                        font-size: 20em;
+                        font-family: 'Odibee Sans', cursive;
+                        color: white;
+                        background-color: transparent;
+                        text-align: center;
+                        outline: none;
+                        border: none;
+                        -moz-appearance: textfield;
+                        width: 550px;
+                        margin: 0;
+                        padding: 0;
+                        text-shadow: 10px 10px 20px rgb(73, 73, 73);
+                        &::placeholder{
+                            // font-size: 17em;
+                            color: rgba(230, 230, 230, 0.3);
+                            text-shadow: none;
+                        }
+                }
+                .control-btns{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .inner-div{
+                        text-align: center;
+                        display: flex;
+                    button{
+                        padding: 5px 10px;
+                        margin: 0 5px;
+                        margin-top: 10px;
+                        user-select: none;
+                        font-size: 25px;
+                        font-weight: bold;
+                        border-radius: 12px;
+                        box-shadow: 1px 1px 5px 1px rgb(254, 254, 254);
+                        &:hover{
+                            cursor: pointer;
+                        }
+                    }
+                    .guess-bt{
+                            background-color: green;
+                            color: white;
+                            border: 1px solid white;
+                            pointer-events: visible;
+                            &:hover{
+                                background-color: white;
+                                border: 1px solid green;
+                                color: green;
+                                transition: 0.6s;
+                            }
+
+                        }
+                        .re-start-bt{
+                            background-color: white;
+                            color: green;
+                            border: 1px solid green;
+                            &:hover{
+                                background-color: green;
+                                border: 1px solid white;
+                                color: white;
+                                transition: 0.6s;
+                            }
+                        }
+                    }
+                }
+                }
+                #background{
+                    // z-index: 5000;
+                    display: none;
+                }
+}

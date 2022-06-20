@@ -1,0 +1,177 @@
+.guess-number::-webkit-outer-spin-button,
+.guess-number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.center-section-div {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.center-section-div .part-bg {
+  z-index: 500;
+}
+
+.center-section-div .center-container {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.center-section-div .center-container .player-name {
+  position: fixed;
+  width: 100%;
+  pointer-events: none;
+  left: 0;
+  text-align: center;
+  top: 10px;
+}
+
+.center-section-div .center-container .player-name .name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  pointer-events: none;
+  color: green;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.center-section-div .center-container .player-name .name #user-icon {
+  font-size: 40px;
+  margin: 0 10px;
+}
+
+.center-section-div .center-container .g-number-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.center-section-div .center-container .guess-number {
+  font-size: 20em;
+  font-family: 'Odibee Sans', cursive;
+  color: white;
+  background-color: transparent;
+  text-align: center;
+  outline: none;
+  border: none;
+  -moz-appearance: textfield;
+  width: 550px;
+  margin: 0;
+  padding: 0;
+  text-shadow: 10px 10px 20px #494949;
+}
+
+.center-section-div .center-container .guess-number::-webkit-input-placeholder {
+  color: rgba(230, 230, 230, 0.3);
+  text-shadow: none;
+}
+
+.center-section-div .center-container .guess-number:-ms-input-placeholder {
+  color: rgba(230, 230, 230, 0.3);
+  text-shadow: none;
+}
+
+.center-section-div .center-container .guess-number::-ms-input-placeholder {
+  color: rgba(230, 230, 230, 0.3);
+  text-shadow: none;
+}
+
+.center-section-div .center-container .guess-number::placeholder {
+  color: rgba(230, 230, 230, 0.3);
+  text-shadow: none;
+}
+
+.center-section-div .center-container .control-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.center-section-div .center-container .control-btns .inner-div {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.center-section-div .center-container .control-btns .inner-div button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  margin-top: 10px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 12px;
+  -webkit-box-shadow: 1px 1px 5px 1px #fefefe;
+          box-shadow: 1px 1px 5px 1px #fefefe;
+}
+
+.center-section-div .center-container .control-btns .inner-div button:hover {
+  cursor: pointer;
+}
+
+.center-section-div .center-container .control-btns .inner-div .guess-bt {
+  background-color: green;
+  color: white;
+  border: 1px solid white;
+  pointer-events: visible;
+}
+
+.center-section-div .center-container .control-btns .inner-div .guess-bt:hover {
+  background-color: white;
+  border: 1px solid green;
+  color: green;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.center-section-div .center-container .control-btns .inner-div .re-start-bt {
+  background-color: white;
+  color: green;
+  border: 1px solid green;
+}
+
+.center-section-div .center-container .control-btns .inner-div .re-start-bt:hover {
+  background-color: green;
+  border: 1px solid white;
+  color: white;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.center-section-div #background {
+  display: none;
+}
+/*# sourceMappingURL=Center.css.map */
