@@ -191,6 +191,9 @@
 }
 
 @media screen and (max-width: 875px) {
+  .center-section-div .center-container .guess-number {
+    font-size: 10rem;
+  }
   .center-section-div .center-container .player-name {
     display: list-item;
   }
@@ -199,6 +202,9 @@
   }
   .center-section-div .center-container .player-name .name .br-class {
     display: block;
+  }
+  .center-section-div .center-container .player-name .g-number-div {
+    background-color: orange;
   }
 }
 /*# sourceMappingURL=Center.css.map */

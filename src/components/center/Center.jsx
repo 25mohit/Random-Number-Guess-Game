@@ -117,7 +117,7 @@ export const Center = ({ showM,remeaningChance, setRemeaningChance, setUsedChanc
                             <div className="player-name">
                                 {playerData && <p className="name"><GiAmericanFootballPlayer id='user-icon' /><br className="br-class" />
                                 {playerData && playerData.pName}&nbsp; <br className="br-class" />
-                                <span className="need-guess">( 0 - {playerData && playerData.pDifficulty} )</span>
+                                <span className="need-guess">( 1 - {playerData && playerData.pDifficulty} )</span>
                                  </p>}
                             </div>
                             <form action="submit">

@@ -18,10 +18,7 @@
 
 .modal-div .container-modal {
   width: 50%;
-  min-height: 65%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 60%;
   padding: 15px 0;
   padding-bottom: 25px;
   border-radius: 25px;
@@ -58,7 +55,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 70%;
+  height: 100%;
+  margin-top: -20px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
