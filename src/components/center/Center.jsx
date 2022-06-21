@@ -35,12 +35,9 @@ export const Center = ({ showM,remeaningChance, setRemeaningChance, setUsedChanc
     },[])
 
     useEffect(() => {
-        console.log("useEffect");
         const interval = setInterval(() => {
-            console.log("setInterval");
             showM && setShowMessage(true)
             clearInterval(interval)
-            console.log("clearInterval");
             },100)
         },[showM])
 
@@ -101,6 +98,7 @@ export const Center = ({ showM,remeaningChance, setRemeaningChance, setUsedChanc
         e.preventDefault()
         startS.play()
         setGuessingNo(0)
+        setUsedChance(0)
         setRemeaningChance(15)
         setGuessedNo([])
         playerData.pDifficulty=10
@@ -112,18 +110,13 @@ export const Center = ({ showM,remeaningChance, setRemeaningChance, setUsedChanc
         let bg = document.getElementById("background")
                 bg.style.display="none"
     }
-    console.log(`Guess No Center Div ${randomNo}`);
-    console.log(guessedNo);
     
- 
-
   return (
     <div className='center-section-div'>
                 <div className="center-container">
                             <div className="player-name">
                                 {playerData && <p className="name"><GiAmericanFootballPlayer id='user-icon' /><br className="br-class" />
                                 {playerData && playerData.pName}&nbsp; <br className="br-class" />
-                                {/* {playerData && playerData.pAge} Years young  */}
                                 <span className="need-guess">( 0 - {playerData && playerData.pDifficulty} )</span>
                                  </p>}
                             </div>

@@ -1,7 +1,5 @@
 import { useSelector } from 'react-redux'
 import './StartMessage.css'
-import {SorryCompo} from '../sorryCompo/SorryCompo'
-import { useState } from 'react'
 import start from '../../assests/sounds/start.wav'
 import cancel from '../../assests/sounds/cancel.wav'
 import background from '../../assests/sounds/gamesound.mp3'
@@ -16,9 +14,7 @@ export const StartMessage = ({setShowMessage, setRandomNo, setShowSorry}) => {
   const generateRandomNo = (e) => {
     e.preventDefault()
     const randomNo = Math.floor(Math.random()*(playerData.pDifficulty || 10)+1)
-    console.log(randomNo);
     setRandomNo(randomNo)
-    console.log("hello");
     setShowMessage(false)
     startS.play()
     bgMusic.play()
@@ -37,9 +33,7 @@ export const StartMessage = ({setShowMessage, setRandomNo, setShowSorry}) => {
                         <button className="start" onClick={ generateRandomNo }>Yeh Sure</button>
                         <button className="cancel" onClick={ cancelGame }>No! I am Looser</button>
                 </form>
-        </div>
-       
-        
+        </div>      
     </div>
   )
 }
