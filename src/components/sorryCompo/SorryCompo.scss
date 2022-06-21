@@ -15,11 +15,17 @@
     z-index: 2000;
     .sorry-container{
         pointer-events: all;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 80%;
         .heading-sorry{
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
+            width: 90%;
+            text-align: center;
             img{
                 width: 170px;
                 animation: rotate 2s linear infinite; 
@@ -36,4 +42,15 @@
 }
   @keyframes rotate{
     to{ transform: rotate(360deg); }
+  }
+  @media screen and (max-width:850px) {
+        .sorry-div{
+            .sorry-container{
+                .heading-sorry{
+                        .sorry-text{
+                            font-size: 80px;
+                        }
+                }
+            }
+        }
   }

@@ -18,7 +18,12 @@
 
 .modal-div .container-modal {
   width: 50%;
-  height: 75%;
+  min-height: 65%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 15px 0;
+  padding-bottom: 25px;
   border-radius: 25px;
   background-color: rgba(250, 250, 250, 0.5);
   -webkit-backdrop-filter: blur(8px);
@@ -26,7 +31,6 @@
 }
 
 .modal-div .container-modal .header-div {
-  padding: 10px;
   padding-right: 15px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -112,6 +116,7 @@
 }
 
 .modal-div .container-modal .center-modal-div .modal-form .input-field {
+  width: 100%;
   margin-bottom: 25px;
   padding: 10px;
   -webkit-box-sizing: border-box;
@@ -187,5 +192,45 @@
 
 .modal-div .container-modal .center-modal-div .modal-form .modal-footer .info-icon:hover {
   cursor: pointer;
+}
+
+@media screen and (max-width: 875px) {
+  .modal-div {
+    -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
+  }
+  .modal-div .container-modal {
+    width: 90%;
+  }
+  .modal-div .container-modal .center-modal-div .modal-form label {
+    margin-top: 10px;
+  }
+  .modal-div .container-modal .center-modal-div .modal-form .input-field {
+    margin-bottom: 0;
+  }
+  .modal-div .container-modal .center-modal-div .modal-form .flex-option-div {
+    gap: 0;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .modal-div {
+    -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
+  }
+  .modal-div .container-modal {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding-bottom: 35px;
+  }
+  .modal-div .container-modal .modal-footer {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding-bottom: 15px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
 }
 /*# sourceMappingURL=Modal.css.map */

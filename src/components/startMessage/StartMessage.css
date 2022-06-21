@@ -2,8 +2,6 @@
   position: fixed;
   width: 100vw;
   height: 100vh;
-  top: -10%;
-  right: -20%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

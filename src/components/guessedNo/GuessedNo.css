@@ -17,13 +17,15 @@
 
 .guessed-number {
   position: fixed;
-  right: -35%;
-  bottom: -15%;
   width: 100vw;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-left: 65%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-top: 17%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -64,5 +66,21 @@
       -ms-user-select: none;
           user-select: none;
   line-height: 32px;
+}
+
+@media screen and (max-width: 875px) {
+  .guessed-number {
+    padding-right: 10px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .guessed-number .container-guessed {
+    -webkit-backdrop-filter: blur(0px);
+            backdrop-filter: blur(0px);
+    background-color: transparent;
+  }
+  .guessed-number .container-guessed .guessed-text {
+    font-size: 15px;
+  }
 }
 /*# sourceMappingURL=GuessedNo.css.map */

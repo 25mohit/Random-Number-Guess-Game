@@ -12,20 +12,18 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #1aff0e; 
   }
-
 .guessed-number{
-    // background-color: red;
     position: fixed;
-    right: -35%;
-    bottom:-15%;
+    // background-color: blue;
     width: 100vw;
     height: 100vh;
     display: flex;
+    padding-left: 65%;
+    box-sizing: border-box;
+    padding-top: 17%;
     justify-content: center;
     align-items: center;
     pointer-events: none;
-    // padding: 10px;
-    // box-sizing: border-box;
     .container-guessed{
             pointer-events: all;
             width: 250px;
@@ -50,12 +48,19 @@
                         line-height: 32px;
                         // text-shadow: 10px 10px 10px gray;
                     }
-                    // .guess-no:nth-child(even){
-                    //     background-color: rgba(168, 255, 187, 0.2);
-                    // }
-                    // .guess-no:nth-child(odd){
-                    //     background-color: rgba(253, 255, 186, 0.2);
-                    // }
             }
+    }
+}
+@media screen and (max-width:875px) {
+    .guessed-number{
+      padding-right:10px;
+      box-sizing: border-box;
+      .container-guessed{
+        backdrop-filter: blur(0px);
+        background-color: transparent;
+        .guessed-text{
+            font-size: 15px;
+        }
+        }
     }
 }

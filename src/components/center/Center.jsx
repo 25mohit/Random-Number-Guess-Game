@@ -121,9 +121,9 @@ export const Center = ({ showM,remeaningChance, setRemeaningChance, setUsedChanc
     <div className='center-section-div'>
                 <div className="center-container">
                             <div className="player-name">
-                                {playerData && <p className="name"><GiAmericanFootballPlayer id='user-icon' />
-                                {playerData && playerData.pName}, &nbsp;
-                                {playerData && playerData.pAge} Years young 
+                                {playerData && <p className="name"><GiAmericanFootballPlayer id='user-icon' /><br className="br-class" />
+                                {playerData && playerData.pName}&nbsp; <br className="br-class" />
+                                {/* {playerData && playerData.pAge} Years young  */}
                                 <span className="need-guess">( 0 - {playerData && playerData.pDifficulty} )</span>
                                  </p>}
                             </div>

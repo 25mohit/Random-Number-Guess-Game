@@ -23,10 +23,6 @@
 
 .sorry-div .sorry-container {
   pointer-events: all;
-  width: 80%;
-}
-
-.sorry-div .sorry-container .heading-sorry {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -36,6 +32,23 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 80%;
+}
+
+.sorry-div .sorry-container .heading-sorry {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+  text-align: center;
 }
 
 .sorry-div .sorry-container .heading-sorry img {
@@ -62,6 +75,12 @@
   to {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .sorry-div .sorry-container .heading-sorry .sorry-text {
+    font-size: 80px;
   }
 }
 /*# sourceMappingURL=SorryCompo.css.map */

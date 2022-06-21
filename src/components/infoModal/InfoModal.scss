@@ -80,3 +80,25 @@
             }
         }
     }
+    @media screen and (max-width:875px) {
+        .info-modal{
+            .info-container{
+                .content-div{
+                    .dev-name{
+                        font-size: 25px;
+                    }
+                        .dev-info{
+                            font-size: 15px;
+                        }
+                        .how-to-play{
+                            font-size: 22px;
+                        }
+                        .how-to-text{
+                            li{
+                                font-size: 14px;
+                            }
+                        }
+                }
+            }
+        }
+    }

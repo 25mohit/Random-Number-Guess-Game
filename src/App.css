@@ -33,9 +33,31 @@
   position: fixed;
   bottom: 15px;
   left: 15px;
-
 }
 .setting-icon #set-icon{
   font-size: 40px;
   cursor: pointer;
+}
+@media screen and (max-width:875px) {
+  .App{
+    padding: 0;
+  }
+    .App .left-div{
+      flex: 0;
+      position: fixed;
+      top: 10px;
+      left: 10px;
+    }
+    .App .right-div{
+      background-color: red;
+      flex: 0;
+      position: fixed;
+      top: 10px;
+      right: 10px;
+    }
+    .App .center-div{
+      /* width: 100vw; */
+      height: 100vh;
+      flex: 1;
+    }
 }
