@@ -5,9 +5,12 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { ErrorWindow } from '../errorWindow/ErrorWindow';
 import { InfoModal } from '../infoModal/InfoModal';
+import error from '../../assests/sounds/error.mp3'
+import welcome from '../../assests/sounds/welcome.mp3'
 
 export const Modal = ({setShowModal, setShowM, setShowRIght, setShoeCent,setShowSorry}) => {
 
+   
     const [pName, setPName] = useState('')
     const [pAge, setPAge] = useState('')
     const [pDifficulty, setPDifficulty] = useState('')
@@ -22,6 +25,9 @@ export const Modal = ({setShowModal, setShowM, setShowRIght, setShoeCent,setShow
     //    console.log(age);
     }  
     
+    const sound = new Audio(error)
+    const welcomeS = new Audio(welcome)
+
     const submitForm = (e) => {
         e.preventDefault()
         if( pName && pAge ){
@@ -33,7 +39,9 @@ export const Modal = ({setShowModal, setShowM, setShowRIght, setShoeCent,setShow
         })
         setShowModal(false)
         setShowM(true)
+        welcomeS.play()
     }else{
+        sound.play()
         setShowError(true)
     }
 }

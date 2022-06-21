@@ -6,6 +6,9 @@ import { useEffect, useRef, useState } from 'react';
 import { GuessedNo } from '../guessedNo/GuessedNo';
 import { ErrorWindow } from '../errorWindow/ErrorWindow';
 import Confetti from 'react-confetti'
+import wrong from '../../assests/sounds/wrong.wav'
+import win from '../../assests/sounds/win.wav'
+import { SorryCompo } from '../sorryCompo/SorryCompo';
 
 export const Center = ({ showM,remeaningChance, setRemeaningChance,setStartWatch }) => {
     const [showMessage, setShowMessage] = useState(false)
@@ -13,11 +16,14 @@ export const Center = ({ showM,remeaningChance, setRemeaningChance,setStartWatch
     const [randomNo, setRandomNo] = useState('')
     const [guessedNo, setGuessedNo] = useState([])
     const [showSuc, setShowSuc] = useState(false)
-
+    const [showErr2, setShowErr2] = useState(false)
     const [lower, setLower] = useState(false)
     const [higher, setHigher] = useState(false)
+    const [showSorry, setShowSorry] = useState(false)
 
     const playerData = useSelector(state => state.playerData)
+    const wrongS = new Audio(wrong)
+    const winS = new Audio(win)
 
     useEffect(() => {
         console.log("useEffect");
@@ -37,18 +43,30 @@ export const Center = ({ showM,remeaningChance, setRemeaningChance,setStartWatch
     },[showM])
 
     // const difficulty = playerData.pDifficulty
-    const guessHandler = () => {
+    const guessHandler = (e) => {
+        e.preventDefault()
         setRemeaningChance(remeaningChance-1)
         if(guessingNo > randomNo){
             setHigher(true)
+            wrongS.play()
         }
+        // if(randomNo=="" && guessedNo==0){
+        //     let bg = document.getElementById("background")
+        //         bg.style.display="none"
+        //         let danger = document.getElementById("guess-bt")
+        //         let wraper = document.getElementById("wraper")
+        //         danger.style.pointerEvents="none";
+        //         wraper.style.cursor="not-allowed"
+        //         setShowErr2(true)
+        // }
         if(guessingNo < randomNo){
             setLower(true)
+            wrongS.play()
         }
-        if(guessingNo == randomNo){
-                console.log("RIGHT");
+        if(guessingNo == randomNo && randomNo !=''){
+                winS.play()
                 let bg = document.getElementById("background")
-                bg.style.display="block"
+                    bg.style.display="block"
                 let danger = document.getElementById("guess-bt")
                 let wraper = document.getElementById("wraper")
                 danger.style.pointerEvents="none";
@@ -63,20 +81,25 @@ export const Center = ({ showM,remeaningChance, setRemeaningChance,setStartWatch
                 wraper.style.cursor="not-allowed"
         }
     }
-    const restart = () => {
+
+    const restart = (e) => {
+        e.preventDefault()
         setGuessingNo(0)
         setRemeaningChance(15)
         setGuessedNo([])
+
         let danger = document.getElementById("guess-bt")
         let wraper = document.getElementById("wraper")
         danger.style.pointerEvents="all";
         wraper.style.cursor="pointer";
-        setRandomNo(Math.floor(Math.random()*(playerData.pDifficulty || 10)))
+        setRandomNo(Math.floor(Math.random()*(playerData.pDifficulty || 10))+1)
         let bg = document.getElementById("background")
                 bg.style.display="none"
     }
     console.log(`Guess No Center Div ${randomNo}`);
     console.log(guessedNo);
+    
+ 
 
   return (
     <div className='center-section-div'>
@@ -85,8 +108,8 @@ export const Center = ({ showM,remeaningChance, setRemeaningChance,setStartWatch
                                 { randomNo}
                                 <p className="name"><GiAmericanFootballPlayer id='user-icon' />{playerData && playerData.pName}, {playerData && playerData.pAge} Years young </p>
                             </div>
-                            <div className="g-number-div">
-                                    {/* <p className="guess-number">{guessingNo}</p> */}
+                            <form action="submit">
+                            <div className="g-number-div" id='guess-div'>
                                     <input className='guess-number' value={guessingNo} onChange={ e => setGuessingNo(e.target.value)} type="number" placeholder='No'/><br />
                             </div>
                             <div className="control-btns">
@@ -97,18 +120,21 @@ export const Center = ({ showM,remeaningChance, setRemeaningChance,setStartWatch
                                     <button className="re-start-bt" onClick={restart}>Re-Start</button>
                                 </div>
                             </div>
+                            </form>
                 </div>
                 {showMessage && <StartMessage setStartWatch={setStartWatch} setRandomNo={setRandomNo} setShowMessage={ setShowMessage }/> }
                 {remeaningChance < 15 && <GuessedNo guessedNo = { guessedNo }/>}
                 {showSuc && <ErrorWindow id='su' message={"Player Successfully Registered"} off={setShowSuc}/>}
                 {higher && <ErrorWindow id='hi' message={"You Guessed it Hight.."} off={setHigher}/>}
                 {lower && <ErrorWindow id='lo' message={"You Guessed it Low"} off={setLower}/>}
+                {showErr2 && <ErrorWindow id='er' message={"You are not Playing this game, first Refresh Page and click on Play"} off={setShowErr2}/>}
                 <div id="background">
                 <Confetti
                     width={window.innerWidth}
                     height={window.innerHeight}
                     numberOfPieces={700}
                     />
+                    <SorryCompo />
                 </div>
     </div>
   )

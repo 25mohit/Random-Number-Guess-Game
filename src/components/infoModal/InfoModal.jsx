@@ -27,8 +27,8 @@ export const InfoModal = ({setShowInfo}) => {
                             <li>Player Need to enter their name and age (name & age are compulsory).</li>
                             <li>Player can enter Difficulty number, which means that computer cannot guess above that number, but can guess near that no.</li>
                             <li>Difficulty number is not mandatory. But default highest guessable number is 10.</li>
-                            <li>After filling every required field, player need to click on "Yeh! Sure" button to play game.</li>
-                            <li>Player have 15 chances for guessing, after that player need to click on "Re-Start" button or can Re-fresh webpage.</li>
+                            <li>After filling every required field, player need to click on <strong>"Yeh! Sure"</strong> button to play game.</li>
+                            <li>Player have 15 chances for guessing, after that player need to click on <strong>"Re-Start"</strong> button or can Re-fresh webpage.</li>
                             <li>There is a setting button on Home-screen page of the game, player can change their information even in running game.</li>
                             <li>This is a free to use, and free for everyone game. If you like it you can like my Social-media handles.</li>
                             <li>If you have any query related to this game or if you want to contact me you can reach out to me on my social media handles.</li>

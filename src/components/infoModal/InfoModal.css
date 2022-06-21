@@ -16,10 +16,11 @@
 }
 
 .info-modal .info-container {
+  overflow: auto;
   width: 90%;
   -webkit-transition: 0.6s;
   transition: 0.6s;
-  height: 90%;
+  height: 92%;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.3);
   -webkit-backdrop-filter: blur(10px);
@@ -81,6 +82,7 @@
 }
 
 .info-modal .info-container .content-div .footer-sec {
+  padding-top: 5px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -100,7 +102,7 @@
 }
 
 .info-modal .info-container .content-div .footer-sec a .social-icon {
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .info-modal .info-container .content-div .footer-sec a .social-icon:hover {
