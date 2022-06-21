@@ -1,9 +1,3 @@
-.guess-number::-webkit-outer-spin-button,
-.guess-number::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
 .center-section-div {
   height: 100vh;
   display: -webkit-box;
@@ -50,6 +44,11 @@
   color: green;
   font-weight: bold;
   font-size: 20px;
+}
+
+.center-section-div .center-container .player-name .name .need-guess {
+  font-weight: normal;
+  margin: 0 10px;
 }
 
 .center-section-div .center-container .player-name .name #user-icon {

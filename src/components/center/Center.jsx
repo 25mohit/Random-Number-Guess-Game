@@ -8,9 +8,11 @@ import { ErrorWindow } from '../errorWindow/ErrorWindow';
 import Confetti from 'react-confetti'
 import wrong from '../../assests/sounds/wrong.wav'
 import win from '../../assests/sounds/win.wav'
+import start from '../../assests/sounds/start.wav'
 import { SorryCompo } from '../sorryCompo/SorryCompo';
 
-export const Center = ({ showM,remeaningChance, setRemeaningChance,setStartWatch }) => {
+export const Center = ({ showM,remeaningChance, setRemeaningChance, setUsedChance, usedChance }) => {
+
     const [showMessage, setShowMessage] = useState(false)
     const [guessingNo, setGuessingNo] = useState(0)
     const [randomNo, setRandomNo] = useState('')
@@ -19,11 +21,18 @@ export const Center = ({ showM,remeaningChance, setRemeaningChance,setStartWatch
     const [showErr2, setShowErr2] = useState(false)
     const [lower, setLower] = useState(false)
     const [higher, setHigher] = useState(false)
+    const [onlyNo, setOnlyNo] = useState(false)
     const [showSorry, setShowSorry] = useState(false)
 
     const playerData = useSelector(state => state.playerData)
     const wrongS = new Audio(wrong)
     const winS = new Audio(win)
+    const startS = new Audio(start)
+
+    const inputRef = useRef()
+    useEffect(() => {
+        inputRef.current.focus()
+    },[])
 
     useEffect(() => {
         console.log("useEffect");
@@ -32,62 +41,69 @@ export const Center = ({ showM,remeaningChance, setRemeaningChance,setStartWatch
             showM && setShowMessage(true)
             clearInterval(interval)
             console.log("clearInterval");
-        },100)
-    },[showM])
+            },100)
+        },[showM])
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            showM && setShowSuc(true)
-            clearInterval(interval)
-        },1)
-    },[showM])
+        useEffect(() => {
+            const interval = setInterval(() => {
+                showM && setShowSuc(true)
+                clearInterval(interval)
+            },1)
+        },[showM])
 
-    // const difficulty = playerData.pDifficulty
-    const guessHandler = (e) => {
-        e.preventDefault()
-        setRemeaningChance(remeaningChance-1)
-        if(guessingNo > randomNo){
-            setHigher(true)
-            wrongS.play()
-        }
-        // if(randomNo=="" && guessedNo==0){
-        //     let bg = document.getElementById("background")
-        //         bg.style.display="none"
-        //         let danger = document.getElementById("guess-bt")
-        //         let wraper = document.getElementById("wraper")
-        //         danger.style.pointerEvents="none";
-        //         wraper.style.cursor="not-allowed"
-        //         setShowErr2(true)
-        // }
-        if(guessingNo < randomNo){
-            setLower(true)
-            wrongS.play()
-        }
-        if(guessingNo == randomNo && randomNo !=''){
-                winS.play()
-                let bg = document.getElementById("background")
-                    bg.style.display="block"
-                let danger = document.getElementById("guess-bt")
-                let wraper = document.getElementById("wraper")
-                danger.style.pointerEvents="none";
-                wraper.style.cursor="not-allowed"
-            }
+        const guessHandler = (e) => {
+            e.preventDefault()
+            setRemeaningChance(remeaningChance-1)
+            setUsedChance(usedChance+1)
             setGuessedNo([ guessingNo, ...guessedNo])
-            if(remeaningChance <=1){
-            // alert('You Ran Out Of Chance')
-                let danger = document.getElementById("guess-bt")
-                let wraper = document.getElementById("wraper")
-                danger.style.pointerEvents="none";
-                wraper.style.cursor="not-allowed"
-        }
+
+        if(guessingNo.match(/[0-9]/)){
+                if(guessingNo > randomNo){
+                    setHigher(true)
+                    wrongS.play()
+                }
+                if(guessingNo < randomNo){
+                    setLower(true)
+                    wrongS.play()
+                }
+
+                if(guessingNo == randomNo ){
+                        winS.play()
+                        let bg = document.getElementById("background")
+                        bg.style.display="block"
+                        let danger = document.getElementById("guess-bt")
+                        let wraper = document.getElementById("wraper")
+                        danger.style.pointerEvents="none";
+                        wraper.style.cursor="not-allowed"
+                        setRemeaningChance(remeaningChance)
+                        setGuessedNo(guessedNo)
+                    }
+                      if(remeaningChance <=1){
+                        let danger = document.getElementById("guess-bt")
+                        let wraper = document.getElementById("wraper")
+                        danger.style.pointerEvents="none";
+                        wraper.style.cursor="not-allowed"
+                    }
+            }else{
+                setOnlyNo(true)
+                wrongS.play()
+                if(remeaningChance<=1){
+                    setRemeaningChance(0)
+                    let danger = document.getElementById("guess-bt")
+                    let wraper = document.getElementById("wraper")
+                    danger.style.pointerEvents="none";
+                    wraper.style.cursor="not-allowed"
+                }
+                }
     }
 
     const restart = (e) => {
         e.preventDefault()
+        startS.play()
         setGuessingNo(0)
         setRemeaningChance(15)
         setGuessedNo([])
-
+        playerData.pDifficulty=10
         let danger = document.getElementById("guess-bt")
         let wraper = document.getElementById("wraper")
         danger.style.pointerEvents="all";
@@ -105,12 +121,15 @@ export const Center = ({ showM,remeaningChance, setRemeaningChance,setStartWatch
     <div className='center-section-div'>
                 <div className="center-container">
                             <div className="player-name">
-                                { randomNo}
-                                <p className="name"><GiAmericanFootballPlayer id='user-icon' />{playerData && playerData.pName}, {playerData && playerData.pAge} Years young </p>
+                                {playerData && <p className="name"><GiAmericanFootballPlayer id='user-icon' />
+                                {playerData && playerData.pName}, &nbsp;
+                                {playerData && playerData.pAge} Years young 
+                                <span className="need-guess">( 0 - {playerData && playerData.pDifficulty} )</span>
+                                 </p>}
                             </div>
                             <form action="submit">
                             <div className="g-number-div" id='guess-div'>
-                                    <input className='guess-number' value={guessingNo} onChange={ e => setGuessingNo(e.target.value)} type="number" placeholder='No'/><br />
+                                    <input className='guess-number' ref={inputRef}  value={guessingNo} onChange={ e => setGuessingNo(e.target.value)} type="number" placeholder='No.'/><br />
                             </div>
                             <div className="control-btns">
                                 <div className="inner-div">
@@ -122,19 +141,21 @@ export const Center = ({ showM,remeaningChance, setRemeaningChance,setStartWatch
                             </div>
                             </form>
                 </div>
-                {showMessage && <StartMessage setStartWatch={setStartWatch} setRandomNo={setRandomNo} setShowMessage={ setShowMessage }/> }
+                {showMessage && <StartMessage setShowSorry={setShowSorry} setRandomNo={setRandomNo} setShowMessage={ setShowMessage }/> }
                 {remeaningChance < 15 && <GuessedNo guessedNo = { guessedNo }/>}
                 {showSuc && <ErrorWindow id='su' message={"Player Successfully Registered"} off={setShowSuc}/>}
                 {higher && <ErrorWindow id='hi' message={"You Guessed it Hight.."} off={setHigher}/>}
                 {lower && <ErrorWindow id='lo' message={"You Guessed it Low"} off={setLower}/>}
                 {showErr2 && <ErrorWindow id='er' message={"You are not Playing this game, first Refresh Page and click on Play"} off={setShowErr2}/>}
+                {onlyNo && <ErrorWindow id='er' message={"Please Enter only Numbers"} off={setOnlyNo}/>}
+                {showSorry && <SorryCompo /> }
                 <div id="background">
                 <Confetti
                     width={window.innerWidth}
                     height={window.innerHeight}
                     numberOfPieces={700}
                     />
-                    <SorryCompo />
+                    
                 </div>
     </div>
   )

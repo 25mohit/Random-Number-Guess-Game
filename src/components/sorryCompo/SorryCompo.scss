@@ -5,9 +5,14 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
+    background-image:url('../../assests/Untitled-1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     top: 0;
     pointer-events: none;
     left: 0;
+    z-index: 2000;
     .sorry-container{
         pointer-events: all;
         width: 80%;
@@ -17,7 +22,9 @@
             align-items: center;
             img{
                 width: 170px;
+                animation: rotate 2s linear infinite; 
             }
+           
             .sorry-text{
                 font-family: 'Tangerine', cursive;
                 font-size: 8em;
@@ -27,3 +34,6 @@
         }
     }
 }
+  @keyframes rotate{
+    to{ transform: rotate(360deg); }
+  }

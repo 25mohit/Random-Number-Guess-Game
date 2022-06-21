@@ -1,6 +1,6 @@
 import './reminingChance.css'
 
-export const ReminingChance = ({remeaningChance}) => {
+export const ReminingChance = ({remeaningChance,usedChance}) => {
         if(remeaningChance==7){
                 let bg = document.getElementById("remi-bg")
                 bg.style.backgroundColor="orange"
@@ -46,6 +46,9 @@ export const ReminingChance = ({remeaningChance}) => {
                     </div>
                     <div className="remaining-div">
                             <p className="remaining-text">Remaining</p>
+                    </div>
+                    <div className="footer-remining">
+                                <p className="taken-chance">{usedChance} chances taken</p>
                     </div>
             </div>
     </div>

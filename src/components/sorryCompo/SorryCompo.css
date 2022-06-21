@@ -11,9 +11,14 @@
           align-items: center;
   width: 100vw;
   height: 100vh;
+  background-image: url("../../assests/Untitled-1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   top: 0;
   pointer-events: none;
   left: 0;
+  z-index: 2000;
 }
 
 .sorry-div .sorry-container {
@@ -35,6 +40,8 @@
 
 .sorry-div .sorry-container .heading-sorry img {
   width: 170px;
+  -webkit-animation: rotate 2s linear infinite;
+          animation: rotate 2s linear infinite;
 }
 
 .sorry-div .sorry-container .heading-sorry .sorry-text {
@@ -42,5 +49,19 @@
   font-size: 8em;
   font-weight: bold;
   color: white;
+}
+
+@-webkit-keyframes rotate {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 /*# sourceMappingURL=SorryCompo.css.map */

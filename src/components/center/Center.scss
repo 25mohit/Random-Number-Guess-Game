@@ -1,8 +1,4 @@
-.guess-number::-webkit-outer-spin-button,
-.guess-number::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
+
 .center-section-div{
     height: 100vh;
     display: flex;
@@ -33,6 +29,11 @@
                     color: green;
                     font-weight: bold;
                     font-size: 20px;
+                    .need-guess{
+                        font-weight: normal;
+                        margin: 0 10px;
+                        // color: gree;
+                    }
                     #user-icon{
                         font-size: 40px;
                         margin: 0 10px;

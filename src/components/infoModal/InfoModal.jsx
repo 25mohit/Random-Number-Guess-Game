@@ -8,6 +8,7 @@ import { BsTwitter } from 'react-icons/bs';
 import { AiOutlineCodepen } from 'react-icons/ai';
 
 export const InfoModal = ({setShowInfo}) => {
+
   return (
     <div className='info-modal'>
         <div className="info-container">
@@ -29,6 +30,7 @@ export const InfoModal = ({setShowInfo}) => {
                             <li>Difficulty number is not mandatory. But default highest guessable number is 10.</li>
                             <li>After filling every required field, player need to click on <strong>"Yeh! Sure"</strong> button to play game.</li>
                             <li>Player have 15 chances for guessing, after that player need to click on <strong>"Re-Start"</strong> button or can Re-fresh webpage.</li>
+                            <li>Player can use <strong>Stopwatch</strong> Feature to track their time.</li>
                             <li>There is a setting button on Home-screen page of the game, player can change their information even in running game.</li>
                             <li>This is a free to use, and free for everyone game. If you like it you can like my Social-media handles.</li>
                             <li>If you have any query related to this game or if you want to contact me you can reach out to me on my social media handles.</li>
@@ -36,8 +38,8 @@ export const InfoModal = ({setShowInfo}) => {
                         <footer className='footer-sec'>
                            <a href="https://github.com/25mohit" target="_blank"> <BsGithub className='social-icon'/></a>
                            <a href="https://www.linkedin.com/in/agarwal24/" target="_blank"> <BsLinkedin className='social-icon'/></a>
-                           <a href="https://twitter.com/mo_hit24" target="_blank"> <BsTwitter className='social-icon'/></a>
-                           <a href="https://codepen.io/mohit24" target="_blank"> <AiOutlineCodepen className='social-icon'/></a>
+                           <a href="https://twitter.com/mo_hit24/" target="_blank"> <BsTwitter className='social-icon'/></a>
+                           <a href="https://codepen.io/mohit24/" target="_blank"> <AiOutlineCodepen className='social-icon'/></a>
                            <a href="https://www.facebook.com/mohit724agarwal" target="_blank">   <GrFacebook className='social-icon'/></a>
                            <a href="https://www.instagram.com/im_hit_/" target="_blank"> <BsInstagram className='social-icon'/></a>
                         </footer>

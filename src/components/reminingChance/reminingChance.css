@@ -23,4 +23,9 @@
 .ReminingChance .container-ReminingChance .remaining-div .remaining-text {
   font-size: 20px;
 }
+
+.ReminingChance .container-ReminingChance .footer-remining .taken-chance {
+  font-weight: normal;
+  letter-spacing: 1px;
+}
 /*# sourceMappingURL=reminingChance.css.map */

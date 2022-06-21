@@ -7,11 +7,11 @@ import { Right } from './components/right/Right';
 import { FcSettings } from 'react-icons/fc';
 import { SorryCompo } from './components/sorryCompo/SorryCompo';
 
-
 function App() {
   const [showModal, setShowModal] = useState(true)
   const [showM, setShowM] = useState(false)
   const [remeaningChance, setRemeaningChance] = useState(15)
+  const [usedChance, setUsedChance] = useState(0)
   const [showRIght, setShowRIght] = useState(true)
   const [shoeCent, setShoeCent] = useState(true)
   const [showSorry, setShowSorry] = useState(false)
@@ -22,11 +22,13 @@ function App() {
         {shoeCent&&
         <div className='center-div'><Center 
         showM={ showM } 
+        usedChance={usedChance}
+        setUsedChance={setUsedChance}
         setRemeaningChance={setRemeaningChance} 
         remeaningChance={ remeaningChance }
         /></div>}
         {showRIght &&<>
-        <div className='right-div'> <Right remeaningChance={remeaningChance}/></div> 
+        <div className='right-div'> <Right usedChance={usedChance} remeaningChance={remeaningChance}/></div> 
             {showModal && <Modal 
             setShowSorry = { setShowSorry }
             setShowRIght={setShowRIght} 
