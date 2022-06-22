@@ -9,6 +9,7 @@ import Confetti from 'react-confetti'
 import wrong from '../../assests/sounds/wrong.wav'
 import win from '../../assests/sounds/win.wav'
 import start from '../../assests/sounds/start.wav'
+import gameover from '../../assests/sounds/gmaeover.wav'
 import { SorryCompo } from '../sorryCompo/SorryCompo';
 
 export const Center = ({ showM,remeaningChance, setRemeaningChance, setUsedChance, usedChance }) => {
@@ -28,6 +29,7 @@ export const Center = ({ showM,remeaningChance, setRemeaningChance, setUsedChanc
     const wrongS = new Audio(wrong)
     const winS = new Audio(win)
     const startS = new Audio(start)
+    const gameO = new Audio(gameover)
 
     const inputRef = useRef()
     useEffect(() => {
@@ -48,6 +50,15 @@ export const Center = ({ showM,remeaningChance, setRemeaningChance, setUsedChanc
             },1)
         },[showM])
 
+        if(remeaningChance <1){
+            let danger = document.getElementById("guess-bt")
+            let wraper = document.getElementById("wraper")
+            document.getElementById("guess-number").disabled= true
+            danger.style.pointerEvents="none";
+            wraper.style.cursor="not-allowed"
+            gameO.play()
+        }
+
         const guessHandler = (e) => {
             e.preventDefault()
             setRemeaningChance(remeaningChance-1)
@@ -63,7 +74,10 @@ export const Center = ({ showM,remeaningChance, setRemeaningChance, setUsedChanc
                     setLower(true)
                     wrongS.play()
                 }
-
+                if(guessingNo==0){
+                    console.log('Error');
+                    alert('hello')
+                }
                 if(guessingNo == randomNo ){
                         winS.play()
                         let bg = document.getElementById("background")
@@ -74,24 +88,14 @@ export const Center = ({ showM,remeaningChance, setRemeaningChance, setUsedChanc
                         wraper.style.cursor="not-allowed"
                         setRemeaningChance(remeaningChance)
                         setGuessedNo(guessedNo)
-                    }
-                      if(remeaningChance <=1){
-                        let danger = document.getElementById("guess-bt")
-                        let wraper = document.getElementById("wraper")
-                        danger.style.pointerEvents="none";
-                        wraper.style.cursor="not-allowed"
+                        document.getElementById("guess-number").disabled= true
                     }
             }else{
+                setRemeaningChance(remeaningChance)
+                setUsedChance(usedChance)
                 setOnlyNo(true)
                 wrongS.play()
-                if(remeaningChance<=1){
-                    setRemeaningChance(0)
-                    let danger = document.getElementById("guess-bt")
-                    let wraper = document.getElementById("wraper")
-                    danger.style.pointerEvents="none";
-                    wraper.style.cursor="not-allowed"
-                }
-                }
+            }
     }
 
     const restart = (e) => {
@@ -122,7 +126,7 @@ export const Center = ({ showM,remeaningChance, setRemeaningChance, setUsedChanc
                             </div>
                             <form action="submit">
                             <div className="g-number-div" id='guess-div'>
-                                    <input className='guess-number' ref={inputRef}  value={guessingNo} onChange={ e => setGuessingNo(e.target.value)} type="number" placeholder='No.'/><br />
+                                    <input className='guess-number' id='guess-number' ref={inputRef}  value={guessingNo} onChange={ e => setGuessingNo(e.target.value)} type="number" placeholder='No.'/><br />
                             </div>
                             <div className="control-btns">
                                 <div className="inner-div">

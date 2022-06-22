@@ -19,6 +19,7 @@ export const Modal = ({setShowModal, setShowM, setShowRIght, setShoeCent,setShow
     const [pDifficulty, setPDifficulty] = useState('')
     const [showError, setShowError] = useState(false)
     const [showInfo, setShowInfo] = useState(false)
+    const [onlyNo, setOnlyNo] = useState(false)
 
     const dispatch = useDispatch()
 
@@ -48,6 +49,7 @@ export const Modal = ({setShowModal, setShowM, setShowRIght, setShoeCent,setShow
     const submitForm = (e) => {
         e.preventDefault()
         if( pName && pAge ){
+            if(pDifficulty.match(/[1-9]/)){            
         dispatch({
             type: 'PLAYER_REGISTER',
             payload:{
@@ -57,6 +59,9 @@ export const Modal = ({setShowModal, setShowM, setShowRIght, setShoeCent,setShow
         setShowModal(false)
         setShowM(true)
         welcomeS.play()
+    }else{
+        setOnlyNo(true)
+    }
     }else{
         sound.play()
         setShowError(true)
@@ -99,7 +104,7 @@ const closeModal = () => {
             </div>
             {showError && <ErrorWindow id='er' message={"Name and Age Fields are Mandatory"} off={setShowError}/>}
             {showInfo && <InfoModal setShowInfo={setShowInfo}/>}
-            
+            {onlyNo && <ErrorWindow id='er' message={"Only Numbers Allowed ( 1-9 )"}  off={setOnlyNo}/>}
     </div>
   )
 }
