@@ -15,12 +15,16 @@ function App() {
   const [showRIght, setShowRIght] = useState(true)
   const [shoeCent, setShoeCent] = useState(true)
   const [showSorry, setShowSorry] = useState(false)
+  
+  const [winBg, setWinBg] = useState(false)
 
   return (
     <div className="App">
         <div className='left-div'><Left/></div>
         {shoeCent&&
         <div className='center-div'><Center 
+        setWinBg={ setWinBg }
+        winBg={ winBg }
         showM={ showM } 
         usedChance={usedChance}
         setUsedChance={setUsedChance}
@@ -30,6 +34,7 @@ function App() {
         {showRIght &&<>
         <div className='right-div'> <Right usedChance={usedChance} remeaningChance={remeaningChance}/></div> 
             {showModal && <Modal 
+            setWinBg = { setWinBg }
             setShowSorry = { setShowSorry }
             setShowRIght={setShowRIght} 
             setShowM={ setShowM } 

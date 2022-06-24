@@ -8,7 +8,7 @@ import { InfoModal } from '../infoModal/InfoModal';
 import error from '../../assests/sounds/error.mp3'
 import welcome from '../../assests/sounds/welcome.mp3'
 
-export const Modal = ({setShowModal, setShowM, setShowRIght, setShoeCent,setShowSorry}) => {
+export const Modal = ({setShowModal, setShowM, setShowRIght, setShoeCent,setShowSorry, setWinBg}) => {
     const inputRef = useRef()
     useEffect(() => {
         inputRef.current.focus()
@@ -58,7 +58,10 @@ export const Modal = ({setShowModal, setShowM, setShowRIght, setShoeCent,setShow
         })
         setShowModal(false)
         setShowM(true)
+        setWinBg(false)
         welcomeS.play()
+        let bg = document.getElementById("background")
+        bg.style.display="none"
     }else{
         setOnlyNo(true)
     }
@@ -81,12 +84,12 @@ const closeModal = () => {
                     <div className="center-modal-div">
                     <form action="" className="modal-form">
                             <label htmlFor="pName">Player Name</label>
-                            <input className='input-field' type="text" ref={inputRef} value={pName} onChange={ e=> setPName(e.target.value)}/>
+                            <input className='input-field' type="text" ref={inputRef} placeholder='Enter your name' value={pName} onChange={ e=> setPName(e.target.value)}/>
                             <div className="flex-option-div">
                                 <div className="left-side">
                                 <label htmlFor="pAge">Age</label>
                                         <select name="" id="" className='input-field' value={pAge} onChange={ e=> setPAge(e.target.value)}>
-                                            <option  disabled>-- select --</option>
+                                            <option value='' disabled>-- select --</option>
                                             {age.map(ag => <option key={ag} value={ag}>{ag} Years</option>)}
                                         </select>
                                 </div>

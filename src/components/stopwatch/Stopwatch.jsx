@@ -23,6 +23,7 @@ export const Stopwatch = () => {
         setTime(0)
         setTimer(false)
     }
+
   return (
     <div className='stopwatch-div'>
             <p>{("0"+ Math.floor((time/60000)%60)).slice(-2)} :&nbsp;</p>

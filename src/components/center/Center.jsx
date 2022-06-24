@@ -12,7 +12,7 @@ import start from '../../assests/sounds/start.wav'
 import gameover from '../../assests/sounds/gmaeover.wav'
 import { SorryCompo } from '../sorryCompo/SorryCompo';
 
-export const Center = ({ showM,remeaningChance, setRemeaningChance, setUsedChance, usedChance }) => {
+export const Center = ({ showM,remeaningChance, setRemeaningChance, setUsedChance, usedChance, winBg, setWinBg }) => {
 
     const [showMessage, setShowMessage] = useState(false)
     const [guessingNo, setGuessingNo] = useState(0)
@@ -80,8 +80,6 @@ export const Center = ({ showM,remeaningChance, setRemeaningChance, setUsedChanc
                 }
                 if(guessingNo == randomNo ){
                         winS.play()
-                        let bg = document.getElementById("background")
-                        bg.style.display="block"
                         let danger = document.getElementById("guess-bt")
                         let wraper = document.getElementById("wraper")
                         danger.style.pointerEvents="none";
@@ -89,6 +87,7 @@ export const Center = ({ showM,remeaningChance, setRemeaningChance, setUsedChanc
                         setRemeaningChance(remeaningChance)
                         setGuessedNo(guessedNo)
                         document.getElementById("guess-number").disabled= true
+                        setWinBg(true)
                     }
             }else{
                 setRemeaningChance(remeaningChance)
@@ -105,14 +104,14 @@ export const Center = ({ showM,remeaningChance, setRemeaningChance, setUsedChanc
         setUsedChance(0)
         setRemeaningChance(15)
         setGuessedNo([])
-        playerData.pDifficulty=10
+        // playerData.pDifficulty=10
         let danger = document.getElementById("guess-bt")
         let wraper = document.getElementById("wraper")
         danger.style.pointerEvents="all";
         wraper.style.cursor="pointer";
-        setRandomNo(Math.floor(Math.random()*(playerData.pDifficulty || 10))+1)
-        let bg = document.getElementById("background")
-                bg.style.display="none"
+        setRandomNo(Math.floor(Math.random()*(playerData.pDifficulty ))+1)
+        document.getElementById("guess-number").disabled= false
+        setWinBg(false)
     }
     
   return (
@@ -146,14 +145,7 @@ export const Center = ({ showM,remeaningChance, setRemeaningChance, setUsedChanc
                 {showErr2 && <ErrorWindow id='er' message={"You are not Playing this game, first Refresh Page and click on Play"} off={setShowErr2}/>}
                 {onlyNo && <ErrorWindow id='er' message={"Please Enter only Numbers"} off={setOnlyNo}/>}
                 {showSorry && <SorryCompo /> }
-                <div id="background">
-                <Confetti
-                    width={window.innerWidth}
-                    height={window.innerHeight}
-                    numberOfPieces={700}
-                    />
-                    
-                </div>
+                {winBg && <Confetti width={window.innerWidth} height={window.innerHeight} numberOfPieces={1000} /> }
     </div>
   )
 }
