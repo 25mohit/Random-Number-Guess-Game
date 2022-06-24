@@ -30,7 +30,7 @@ export const Center = ({ showM,remeaningChance, setRemeaningChance, setUsedChanc
     const winS = new Audio(win)
     const startS = new Audio(start)
     const gameO = new Audio(gameover)
-
+    var playerDataPDifficulty = parseInt(playerData.pDifficulty)
     const inputRef = useRef()
     useEffect(() => {
         inputRef.current.focus()
@@ -59,6 +59,25 @@ export const Center = ({ showM,remeaningChance, setRemeaningChance, setUsedChanc
             gameO.play()
         }
 
+        if(playerDataPDifficulty>999 && playerDataPDifficulty<=9999){
+            let gusessText = document.getElementById("guess-number")
+            gusessText.style.fontSize="14rem";
+            console.log('asad')
+        }
+        if(playerDataPDifficulty>9999 && playerDataPDifficulty<=99999){
+            let gusessText = document.getElementById("guess-number")
+            gusessText.style.fontSize="12rem";
+            console.log('asad')
+        }
+        if(playerDataPDifficulty>100000 && playerDataPDifficulty<=9999999){
+            let gusessText = document.getElementById("guess-number")
+            gusessText.style.fontSize="8rem";
+            console.log('asad')
+        }
+        if(playerDataPDifficulty>9999999){
+            let gusessText = document.getElementById("guess-number")
+            gusessText.style.fontSize="5rem";
+        }
         const guessHandler = (e) => {
             e.preventDefault()
             setRemeaningChance(remeaningChance-1)
@@ -78,6 +97,7 @@ export const Center = ({ showM,remeaningChance, setRemeaningChance, setUsedChanc
                     console.log('Error');
                     alert('hello')
                 }
+                console.log(typeof(playerDataPDifficulty));
                 if(guessingNo == randomNo ){
                         winS.play()
                         let danger = document.getElementById("guess-bt")
@@ -109,7 +129,7 @@ export const Center = ({ showM,remeaningChance, setRemeaningChance, setUsedChanc
         let wraper = document.getElementById("wraper")
         danger.style.pointerEvents="all";
         wraper.style.cursor="pointer";
-        setRandomNo(Math.floor(Math.random()*(playerData.pDifficulty ))+1)
+        setRandomNo(Math.floor(Math.random()*(playerDataPDifficulty ))+1)
         document.getElementById("guess-number").disabled= false
         setWinBg(false)
     }

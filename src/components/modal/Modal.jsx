@@ -60,8 +60,6 @@ export const Modal = ({setShowModal, setShowM, setShowRIght, setShoeCent,setShow
         setShowM(true)
         setWinBg(false)
         welcomeS.play()
-        let bg = document.getElementById("background")
-        bg.style.display="none"
     }else{
         setOnlyNo(true)
     }
