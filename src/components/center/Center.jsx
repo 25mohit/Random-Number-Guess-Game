@@ -158,7 +158,7 @@ export const Center = ({ showM,remeaningChance, setRemeaningChance, setUsedChanc
                             </form>
                 </div>
                 {showMessage && <StartMessage setShowSorry={setShowSorry} setRandomNo={setRandomNo} setShowMessage={ setShowMessage }/> }
-                {remeaningChance < 15 && <GuessedNo guessedNo = { guessedNo }/>}
+                {remeaningChance < 15 && <GuessedNo guessedNo = { guessedNo } randomNo={ randomNo }/>}
                 {showSuc && <ErrorWindow id='su' message={"Player Successfully Registered"} off={setShowSuc}/>}
                 {higher && <ErrorWindow id='hi' message={"You Guessed it Hight.."} off={setHigher}/>}
                 {lower && <ErrorWindow id='lo' message={"You Guessed it Low"} off={setLower}/>}

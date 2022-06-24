@@ -58,14 +58,41 @@
   margin-bottom: 5px;
 }
 
+.guessed-number .container-guessed .map-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 0 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: bold;
+}
+
+.guessed-number .container-guessed .map-div:hover {
+  cursor: pointer;
+}
+
 .guessed-number .container-guessed .map-div .guess-no {
   font-size: 20px;
-  font-weight: bold;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   line-height: 32px;
+}
+
+.guessed-number .container-guessed .map-div #High {
+  color: #ff1e1e;
+}
+
+.guessed-number .container-guessed .map-div #Low {
+  color: #ffff17;
 }
 
 @media screen and (max-width: 875px) {
