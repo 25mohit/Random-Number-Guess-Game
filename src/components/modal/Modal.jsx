@@ -16,7 +16,7 @@ export const Modal = ({setShowModal, setShowM, setShowRIght, setShoeCent,setShow
 
     const [pName, setPName] = useState('')
     const [pAge, setPAge] = useState('')
-    const [pDifficulty, setPDifficulty] = useState('')
+    const [pDifficulty, setPDifficulty] = useState(10)
     const [showError, setShowError] = useState(false)
     const [showInfo, setShowInfo] = useState(false)
     const [onlyNo, setOnlyNo] = useState(false)
@@ -49,7 +49,7 @@ export const Modal = ({setShowModal, setShowM, setShowRIght, setShoeCent,setShow
     const submitForm = (e) => {
         e.preventDefault()
         if( pName && pAge ){
-            if(pDifficulty.match(/[1-9]/)){            
+            // if(pDifficulty.match(/[1-9]/)){            
         dispatch({
             type: 'PLAYER_REGISTER',
             payload:{
@@ -60,9 +60,9 @@ export const Modal = ({setShowModal, setShowM, setShowRIght, setShoeCent,setShow
         setShowM(true)
         setWinBg(false)
         welcomeS.play()
-    }else{
-        setOnlyNo(true)
-    }
+    // }else{
+    //     setOnlyNo(true)
+    // }
     }else{
         sound.play()
         setShowError(true)

@@ -14,7 +14,6 @@
   }
 .guessed-number{
     position: fixed;
-    // background-color: blue;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -43,7 +42,6 @@
             .map-div{
               display: flex;
               justify-content: space-evenly;
-              // background-color: rgba(255, 255, 255, 0.1);
               padding: 0 10px;
               align-items: center;
               box-sizing: border-box;
